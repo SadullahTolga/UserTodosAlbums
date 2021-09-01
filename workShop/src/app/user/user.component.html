@@ -1,0 +1,11 @@
+<ul class="list-group">
+    
+    <li [class] ="getCurrentUserClass(user)"
+    (click) ="setCurrentUser(user)"
+    routerLink="/todos/users/{{user.id}} }  "
+    routerLink="/album/users/{{user.id}} "
+    *ngFor="let user of users">{{user.username}}</li>
+   
+</ul>
+
+<h5 *ngIf="currentUser">{{currentUser.username}}</h5>

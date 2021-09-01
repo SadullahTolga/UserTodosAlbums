@@ -1,0 +1,17 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">User Id</th>
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let favorite of favorites ">
+        <th scope="row">{{favorite.album.userId}}</th>
+        <td>{{favorite.album.id}}</td>
+        <td>{{favorite.album.title}}</td>
+        
+      </tr>
+    </tbody>
+  </table>

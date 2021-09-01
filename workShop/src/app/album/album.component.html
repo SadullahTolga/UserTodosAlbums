@@ -1,0 +1,17 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">User Id</th>
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let album of albums ">
+        <th scope="row">{{album.userId}}</th>
+        <td>{{album.id}}</td>
+        <td>{{album.title}}</td>
+        <td><button (click)="addToFavorite(album)" class = "btn btn-sm btn-success"> Favorilere ekle </button></td>
+      </tr>
+    </tbody>
+  </table>
