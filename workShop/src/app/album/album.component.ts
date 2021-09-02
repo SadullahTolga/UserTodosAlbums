@@ -12,13 +12,14 @@ import { Album } from './album';
 })
 export class AlbumComponent implements OnInit {
   albums: Album[] = []
+  loading:boolean=true;
   constructor(private albumService: AlbumService, private favoriteService: FavoriteServiceService,
 
     private activatedRoute: ActivatedRoute,
     private toastrService: ToastrService) { }
 
   ngOnInit(): void {
-    this.getAlbums();
+    this.delay(3000)
     this.activatedRoute.params.subscribe(params => {
       if (params["userId"]) {
         this.getAlbumsByUserId(params["userId"])
@@ -40,5 +41,14 @@ export class AlbumComponent implements OnInit {
     
     this.favoriteService.addToFavorite(album);
 
+  }
+
+  async delay(ms: number) {
+    await new Promise<void>(resolve => setTimeout(() => resolve(), ms)).then(() => {
+      this.albumService.getAlbums().subscribe(data => {
+        this.albums = data
+        this.loading = false;
+      })
+    });
   }
 }

@@ -4,6 +4,7 @@
         <th scope="col">User Id</th>
         <th scope="col">Id</th>
         <th scope="col">Title</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -11,7 +12,7 @@
         <th scope="row">{{favorite.album.userId}}</th>
         <td>{{favorite.album.id}}</td>
         <td>{{favorite.album.title}}</td>
-        
+        <td><button (click)="removeFromFavorite(favorite.album)" class = "btn btn-sm btn-success"> Favorilerden sil </button></td>
       </tr>
     </tbody>
   </table>

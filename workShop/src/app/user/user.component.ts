@@ -11,6 +11,7 @@ export class UserComponent implements OnInit {
 
   users: User[] = []
   currentUser: User;
+ 
 
   constructor(private userService: UserService) { }
 

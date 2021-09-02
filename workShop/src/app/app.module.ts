@@ -11,9 +11,8 @@ import { AlbumComponent } from './album/album.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { ToastrModule } from 'ngx-toastr';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
+import {NgxPaginationModule} from 'ngx-pagination';
 import { FavoriteDetailComponent } from './favorite-detail/favorite-detail.component';
-
 
 @NgModule({
   declarations: [
@@ -31,7 +30,11 @@ import { FavoriteDetailComponent } from './favorite-detail/favorite-detail.compo
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot({positionClass:"toast-bottom-right"})
+    ToastrModule.forRoot({positionClass:"toast-bottom-right"}),
+    NgxPaginationModule,
+    
+    
+    
     
   ],
   providers: [],
